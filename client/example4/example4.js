@@ -12,6 +12,8 @@ Template.example4.events({
     
 
     Tracker.autorun(function () {
+      console.log("Tracker.currentComputation = " + Tracker.currentComputation._id);
+
       dependency.depend();
       console.log(new Date());
     });

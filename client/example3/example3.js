@@ -7,9 +7,10 @@ Template.example3.events({
     });
 
     Session.set("example3-date", "ONE - " + new Date());
-    Session.set("example3-date", "TWO - " + new Date());
 
     Tracker.flush(); // Execute Tracker pending runs
+
+    Session.set("example3-date", "TWO - " + new Date());
 
     run.stop(); // Remove from Tracker list
 

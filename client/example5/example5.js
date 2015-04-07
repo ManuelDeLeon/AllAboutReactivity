@@ -3,7 +3,7 @@
     this._dep = new Tracker.Dependency();
   }
 
-  if (date) {
+  if (arguments.length) {
     if (date !== this._value) {
       this._value = date;
       this._dep.changed();
