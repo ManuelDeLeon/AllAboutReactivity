@@ -43,7 +43,11 @@ var addLogs = function () {
       for (var id in self._dependentsById) {
         console.log(".changed() - Invalidate computation " + id + ".");
         self._dependentsById[id].invalidate();
+
+        console.log("computation.invalidate() - Run pending computations on the next cpu cycle.");
+        console.log("computation.invalidate() - Add this computation to the pending list.");
       }
+      console.log("It's a brand new CPU cycle!"); // Not really. I put it here for the purpose of the presentation.
     }
     else {
       console.log(".changed() - _dependentsById is empty.");
@@ -97,7 +101,7 @@ Template.example7.events({
   'click #example7-removeLogs': function () {
     if (realDependency) {
       Tracker.Dependency = realDependency;
-      realDependency = false;
+      realDependency = null;
     }
   }
 })
